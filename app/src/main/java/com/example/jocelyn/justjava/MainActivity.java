@@ -3,6 +3,7 @@ package com.example.jocelyn.justjava;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -24,7 +25,10 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        String priceMessage = "Quantity: " + quantity + "\nTotal: $" + (quantity*5) + "\nThank you!";
+        EditText nameEditText = (EditText) findViewById( R.id.name_edit_text );
+        String name = nameEditText.getText().toString();
+        String priceMessage = "Name: " + name + "\nQuantity: " + quantity + "\nTotal: $" +
+                (quantity*5) + "\nThank you!";
         displayMessage(priceMessage);
     }
 
