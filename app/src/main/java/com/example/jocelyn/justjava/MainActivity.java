@@ -1,5 +1,7 @@
 package com.example.jocelyn.justjava;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -100,5 +102,31 @@ public class MainActivity extends AppCompatActivity {
         }
             quantity--;
         display(quantity);
+    }
+
+    /**
+     * Sends the order summary info to an email application.
+     */
+    public void sendEmail(View view) {
+        Intent intent = new Intent( Intent.ACTION_SENDTO );
+        intent.setData(Uri.parse("mailto:"));
+        
+        chocolateCB = (CheckBox) findViewById( R.id.chocolate_checkBox );
+        creamCB = (CheckBox) findViewById( R.id.whipped_cream_checkBox );
+
+        EditText nameEditText = (EditText) findViewById( R.id.name_edit_text );
+        String name = nameEditText.getText().toString();
+        int price = calculateTotalPrice();
+        String priceMessage = "Name: " + name + "\nQuantity: " + quantity;
+        priceMessage += "\nAdd whipped cream? " + creamCB.isChecked();
+        priceMessage += "\nAdd chocolate? " + chocolateCB.isChecked();
+        priceMessage += "\nTotal: $" + price + "\nThank you!";
+
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Coffee Order");
+        intent.putExtra(Intent.EXTRA_TEXT, priceMessage );
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+
     }
 }
