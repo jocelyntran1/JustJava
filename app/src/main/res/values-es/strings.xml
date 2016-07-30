@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Solo Java</string>
+    <string name="add_cream">Agregue la crema batida?</string>
+    <string name="add_chocolate">Agregue el chocolate?</string>
+    <string name="calculate_order">Calcular la Orden</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="email_order">Mandar la Orden</string>
+    <string name="just_java_order">SoloJava Orden</string>
+    <string name="name">Nombre</string>
+    <string name="not_enough_cups"> No se puede pedir menos de una taza de café!</string>
+    <string name="order_summary">Recibo</string>
+    <string name="quantity">Cantidad</string>
+    <string name="thank_you">Gracias!</string>
+    <string name="too_many_cups">No se puede pedir mas de un centenar de las tazas de cafe!</string>
+    <string name="toppings">Ingredientes</string>
+    <string name="total">Total</string>
+    <string name="whipped_cream">La Crema Batida</string>
+</resources>
